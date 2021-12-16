@@ -1,17 +1,33 @@
-<%-- 
-    Document   : scriptlets
-    Created on : 16 dic. 2021, 9:11:59
-    Author     : Alumno Mañana
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Ejemplo JSP con Scriptlets</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Ejemplo JSP con Scriptlets</h1>
+        <br>
+        <% 
+        
+            out.print("Saludos desde mi scriptlet");
+        
+        %>
+        <br>
+        <% 
+        
+            String nombreAplicacion = request.getContextPath(); //Para saber el nombre de la aplicacion
+            out.print("Nombre de mi aplicacion: "+nombreAplicacion);
+        
+        %>
+        <br>
+        <% 
+        
+           if (session !=null && session.isNew()) {%>
+                   La sesion es NUEVA!!
+              <% }else if(session != null){ %>
+                   La sesion NO es nueva
+               <% }  %>
+        <br>
+        <a href="index.html"> Inicio</a>
     </body>
 </html>
