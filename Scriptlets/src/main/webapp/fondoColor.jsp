@@ -1,17 +1,31 @@
-<%-- 
-    Document   : fondoColor
-    Created on : 16 dic. 2021, 9:11:42
-    Author     : Alumno Mañana
---%>
+<% 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+String fondo = request.getParameter("colorFondo");
+
+if (fondo == null || fondo.trim().equals("")) {
+    fondo="white";
+        
+    }
+
+
+
+
+%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP cambioColorFondo</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body bgcolor="<%=fondo%>">
+    <%--<body bgcolor="<%=request.getParameter("ColorFondo")%>"> Se puede hacer asi tambien --%> 
+        <h1>JSP cambioColorFondo</h1>
+        <br>
+        <p>Aplicacando el color de fondo: <%=fondo%> </p> 
+        <%--<p>Aplicacando el color de fondo: <%=request.getParameter("ColorFondo")%> </p> otra forma --%>
+        <br>
+        <a href="index.html"> Inicio</a>
     </body>
 </html>
